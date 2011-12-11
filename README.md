@@ -45,14 +45,14 @@ read   (5558) -->
 ```
 
 In one shell start this (so you can see the output):
-```sh
+```bash
 python source.py --out-port=5555 --delay=0.5 &
 python work.py --in-ports 5555 5558 --out-port=5556
 python sink.py --in-ports 5556
 ```
 
 In another shell start this (so you can interact with it):
-```sh
+```bash
 python read.py --out-port=5558
 ```
 
