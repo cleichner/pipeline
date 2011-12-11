@@ -50,10 +50,9 @@ In another shell start this (so you can interact with it):
 python read.py --out-port 5558
 ```
 
-## Is it any good?
-    Yes.
-
 ## Is it magical?
     Maybe too much.
 
+## Is it any good?
+    Yes.
 
