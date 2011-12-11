@@ -14,7 +14,7 @@ parser.add_argument('--out-port', dest='out_port', type=int, nargs='?',
 args = parser.parse_args()
 
 @pipeline(None, args.out_port)
-def cat():
+def read():
     try:
         return raw_input()
     except EOFError:
