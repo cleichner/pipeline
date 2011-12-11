@@ -41,7 +41,7 @@ There are four example programs that cover every part of a pipeline.
 To set up a pipeline like this:
 <pre>
 source (5555) -->
-                 work (5556) --> sink
+                  work (5556) --> sink
 read   (5558) -->
 </pre>
 
