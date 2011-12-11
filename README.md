@@ -1,7 +1,7 @@
 # Pipeline
 
-This library defines a decorator that turns any function into a stage in a zmq
-pipeline.
+This library defines a decorator that turns any function into a zmq pipeline
+stage.
 
 ## Example time
 
