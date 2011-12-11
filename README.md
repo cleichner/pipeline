@@ -5,6 +5,7 @@ This library defines a decorator that turns any function into a stage in a zmq
 pipeline.
 
 Example time:
+____________
 
 This is a boring function.
 
