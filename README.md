@@ -22,14 +22,7 @@ from pipeline import pipeline
 def echo(data):
     return data
 ```
-
-## Is it any good?
-    Yes.
-
-## Is it magical?
-    Maybe too much.
-
-## How do the examples work?
+## What do the examples do?
 
 There are four example programs that cover every part of a pipeline.
 
@@ -37,6 +30,8 @@ There are four example programs that cover every part of a pipeline.
 * read -- reads from stdin and pushes to --out-port
 * work -- reads from --in-ports, doubles the input, and puts it on --out-port
 * sink -- reads from --in-ports and prints what it reads to stdout 
+
+## How do I run them?
 
 To set up a pipeline like this:
 <pre>
@@ -58,4 +53,10 @@ In another shell start this (so you can interact with it):
 ```bash
 python read.py --out-port 5558
 ```
+
+## Is it magical?
+    Maybe too much.
+
+## Is it any good?
+    Yes.
 
