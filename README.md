@@ -1,10 +1,8 @@
 # Pipeline
-
 This library defines a decorator that turns any function into a zmq pipeline
 stage.
 
 ## Example time
-
 This is a boring function.
 
 ```python
@@ -23,7 +21,6 @@ def echo(data):
     return data
 ```
 ## What do the examples do?
-
 There are four example programs that cover every part of a pipeline.
 
 * source -- continuously prints numbers on --out-port
@@ -32,7 +29,6 @@ There are four example programs that cover every part of a pipeline.
 * sink -- reads from --in-ports and prints what it reads to stdout 
 
 ## How do I run them?
-
 To set up a pipeline like this:
 <pre>
 source (5555) -->
@@ -54,9 +50,10 @@ In another shell start this (so you can interact with it):
 python read.py --out-port 5558
 ```
 
+## Is it any good?
+    Yes.
+
 ## Is it magical?
     Maybe too much.
 
-## Is it any good?
-    Yes.
 
