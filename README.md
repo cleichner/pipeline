@@ -35,7 +35,7 @@ There are four example programs that cover every part of a pipeline.
 
 * source -- continuously prints numbers on --out-port
 * read -- reads from stdin and pushes to --out-port
-* work -- reads from --in-ports and double the input and puts it on --out-port
+* work -- reads from --in-ports, doubles the input, and puts it on --out-port
 * sink -- reads from --in-ports and prints what it reads to stdout 
 
 To set up a pipeline like this:
