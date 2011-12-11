@@ -43,7 +43,7 @@ To set up a pipeline like this:
     source (5555) -->
                     work (5556) --> sink
     read   (5558) -->
-</pre.
+</pre>
 
 In one shell start this (so you can see the output):
 
