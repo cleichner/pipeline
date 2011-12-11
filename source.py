@@ -12,7 +12,7 @@ parser.add_argument('--out-port', dest='out_port', type=int, nargs='?',
                     help='the output port that will be pushed to')
 
 parser.add_argument('--delay', dest='delay', type=float, nargs='?',
-                    default=float(os.environ.get('DELAY', 0)),
+                    default=float(os.environ.get('DELAY', 0.5)),
                     help='increment value for output stream')
 
 parser.add_argument('--start', dest='start', type=int, nargs='?',
