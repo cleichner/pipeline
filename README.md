@@ -39,13 +39,14 @@ There are four example programs that cover every part of a pipeline.
 * work -- reads from --in-ports and double the input and puts it on --out-port
 
 To set up a pipeline like this:
-```
+<pre>
     source (5555) -->
                     work (5556) --> sink
     read   (5558) -->
-```
+</pre.
 
 In one shell start this (so you can see the output):
+
 ```
     python source.py --out-port=5555 --delay=0.5 &
     python work.py --in-ports 5555 5558 --out-port=5556
@@ -53,6 +54,7 @@ In one shell start this (so you can see the output):
 ```
 
 In another shell start this (so you can interact with it):
+
 ```
     python read.py --out-port=5558
 ```
