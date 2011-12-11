@@ -1,11 +1,9 @@
-Pipeline
-========
+# Pipeline
 
 This library defines a decorator that turns any function into a stage in a zmq
 pipeline.
 
-Example time:
-____________
+## Example time:
 
 This is a boring function.
 
@@ -25,11 +23,9 @@ def echo(data):
     return data
 ```
 
-Is it any good?
-_______________
+## Is it any good?
     Yes.
 
-Is a magical?
-_____________
+## Is a magical?
     Maybe too much.
 
