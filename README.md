@@ -3,9 +3,6 @@
 This library defines a decorator that turns any function into a stage in a zmq
 pipeline.
 
-## Dependencies
-pyzmq
-
 ## Example time
 
 This is a boring function.
