@@ -56,6 +56,6 @@ python sink.py --in-ports 5556
 In another shell start this (so you can interact with it):
 
 ```bash
-python read.py --out-port=5558
+python read.py --out-port 5558
 ```
 
