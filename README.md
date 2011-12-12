@@ -19,6 +19,8 @@ from pipeline import pipeline
 @pipeline([5555,5556,5557], 5558)
 def echo(data):
     return data
+
+echo.run()
 ```
 ## What do the examples do?
 There are four example programs that cover every part of a pipeline.
@@ -49,10 +51,3 @@ In another shell start this (so you can interact with it):
 ```bash
 python read.py --out-port 5558
 ```
-
-## Is it magical?
-    Maybe too much.
-
-## Is it any good?
-    Yes.
-
