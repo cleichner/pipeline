@@ -16,3 +16,4 @@ args = parser.parse_args()
 def print_out(data):
     print data
 
+print_out.run()

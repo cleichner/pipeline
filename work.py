@@ -21,3 +21,4 @@ args = parser.parse_args()
 def double_echo(data):
     return 2 * data
 
+double_echo.run()

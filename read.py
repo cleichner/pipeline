@@ -20,3 +20,4 @@ def read():
     except EOFError:
         sys.exit(0)
 
+read.run()

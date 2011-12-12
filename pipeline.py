@@ -41,7 +41,7 @@ class pipeline(object):
 
     def __call__(self, fn):
         if self.inputs:
-            def pipeline():
+            def pipefn():
                 ready = dict(self.poller.poll())
                 for input in self.inputs:
                     if ready.get(input) == zmq.POLLIN:
@@ -49,13 +49,16 @@ class pipeline(object):
                             self.output.send(fn(input.recv()))
                         else:
                             fn(input.recv())
+            self.pipefn = pipefn
         elif self.output:
-            def pipeline():
+            def pipefn():
                 self.output.send(fn())
+            self.pipefn = pipefn
         else:
-            pipeline = fn
+            self.pipefn = fn
+        return self
 
-        # explicit is better than implicit, maybe return pipeline instead?
+    def run(self):
         while True:
-            pipeline()
+            self.pipefn()
 

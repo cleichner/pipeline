@@ -31,3 +31,4 @@ def generate_nums():
     args.start += args.interval
     return str(args.start)
 
+generate_nums.run()
