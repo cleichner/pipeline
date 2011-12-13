@@ -12,7 +12,7 @@ parser.add_argument('--in-ports', dest='in_ports', type=int, nargs='*',
 
 args = parser.parse_args()
 
-@pipeline(args.in_ports, None)
+@pipeline(in_ports=args.in_ports)
 def print_out(data):
     print data
 

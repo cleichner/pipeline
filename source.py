@@ -25,7 +25,7 @@ parser.add_argument('--interval', dest='interval', type=int, nargs='?',
 
 args = parser.parse_args()
 
-@pipeline(None, args.out_port)
+@pipeline(out_port=args.out_port)
 def generate_nums():
     time.sleep(args.delay)
     args.start += args.interval

@@ -17,7 +17,7 @@ parser.add_argument('--in-ports', dest='in_ports', type=int, nargs='*',
 
 args = parser.parse_args()
 
-@pipeline(args.in_ports, args.out_port)
+@pipeline(in_ports=args.in_ports, out_port=args.out_port)
 def double_echo(data):
     return 2 * data
 

@@ -19,7 +19,7 @@ provided and should return a value if out_port is provided.
 import zmq
 
 class pipeline(object):
-    def __init__(self, in_ports, out_port, ip='localhost'):
+    def __init__(self, in_ports=None, out_port=None, ip='localhost'):
         context = zmq.Context()
         self.output = None
         if out_port:
