@@ -16,7 +16,7 @@ And this is a boring part of a zmq pipeline that takes input from ports 5555,
 ```python
 from pipeline import pipeline
 
-@pipeline([5555,5556,5557], 5558)
+@pipeline(in_ports=[5555,5556,5557], out_port=5558)
 def echo(data):
     return data
 
