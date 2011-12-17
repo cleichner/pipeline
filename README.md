@@ -11,7 +11,7 @@ def echo(data):
 ```
 
 And this is a boring part of a zmq pipeline that takes input from ports 5555,
-5556, and 5557 over tcp on localhost and echos everything it to port 5558.
+5556, and 5557 over tcp on localhost and echos everything it reads to port 5558.
 
 ```python
 from pipeline import pipeline
