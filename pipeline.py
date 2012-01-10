@@ -20,27 +20,15 @@ import zmq
 
 class pipeline(object):
     def __init__(self, in_ports=None, out_port=None, ip='localhost'):
-        context = zmq.Context()
+        self.in_ports = in_ports
+        self.out_port = out_port
+        self.ip = ip
+
+        self.context = zmq.Context()
         self.output = None
-        if out_port:
-            self.output = context.socket(zmq.PUSH)
-            self.output.bind('tcp://*:%d' % out_port)
-
-        if not in_ports:
-            in_ports = []
-
-        self.inputs = []
-        for port in in_ports:
-            input = context.socket(zmq.PULL)
-            input.connect('tcp://%s:%d' % (ip, port))
-            self.inputs.append(input)
-
-        self.poller = zmq.Poller()
-        for input in self.inputs:
-            self.poller.register(input, zmq.POLLIN)
 
     def __call__(self, fn):
-        if self.inputs:
+        if self.in_ports:
             def pipefn():
                 ready = dict(self.poller.poll())
                 for input in self.inputs:
@@ -50,7 +38,7 @@ class pipeline(object):
                         else:
                             fn(input.recv())
             self.pipefn = pipefn
-        elif self.output:
+        elif self.out_port:
             def pipefn():
                 self.output.send(fn())
             self.pipefn = pipefn
@@ -59,6 +47,23 @@ class pipeline(object):
         return self
 
     def run(self):
+        if self.out_port:
+            self.output = self.context.socket(zmq.PUSH)
+            self.output.bind('tcp://*:%d' % self.out_port)
+
+        if not self.in_ports:
+            self.in_ports = []
+
+        self.inputs = []
+        for port in self.in_ports:
+            input = self.context.socket(zmq.PULL)
+            input.connect('tcp://%s:%d' % (self.ip, port))
+            self.inputs.append(input)
+
+        self.poller = zmq.Poller()
+        for input in self.inputs:
+            self.poller.register(input, zmq.POLLIN)
+
         while True:
             self.pipefn()
 
